@@ -230,19 +230,15 @@ function getDeleteResourceView(req, res) {
   });
 }
 
+
 function postNewResource(req, res) {
-/**
- * id SERIAL PRIMARY KEY,
- * title varchar(255),
- * description text,
- * resource_url varchar(255),
- * logo_png bytea
- */
+
 
   let {
     title,
     description,
     resource_url,
+    //TODO: GET LOGO
     // logo_png
   } = req.body;
   let values = [title, description, resource_url];
@@ -311,3 +307,16 @@ function handleError(err, response) {
 
 // ========== Listen on PORT ==========
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+
+
+//TODO: CLEAN UP =======================
+
+/**
+ * FUNCTION postNewResource
+ * id SERIAL PRIMARY KEY,
+ * title varchar(255),
+ * description text,
+ * resource_url varchar(255),
+ * logo_png bytea
+ * //Please remove when no longer needed for reference.
+ */
